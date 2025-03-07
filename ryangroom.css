@@ -104,7 +104,7 @@ ta[aria-current=true]:focus {
 }
 
 .lift:hover .lift-text {
-    transform: translateX(48px);
+    transform: translateX(68px);
     transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
