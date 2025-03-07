@@ -1,0 +1,209 @@
+:root {
+    --accent: #F584B1;
+    --primary-bg: #243929;
+    --secondary-bg: #b19581;
+    --primary-font: #f4f1e1;
+    --secondary-font: #efe2c9;
+    --dark: #132018;
+    --font-size-biggest: 4rem;
+    --font-size-bigger: 2rem;
+    --font-size-big: 1.5rem;
+    --font-size-small: .9rem;
+    --font-size-smaller: .85rem;
+    --font-size-smalleset: .7rem;
+    --font-family: Helvetica;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+}
+
+/*---------- || Global Elements ----------*/
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--primary-font);
+    font-family: var(--font-family);
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    transition: ease.1s;
+    text-decoration-color: var(--secondary-font);
+}
+
+a:hover {
+    text-decoration-color: var(--accent);
+}
+
+a[aria-current=true] {
+    text-decoration: none;
+}
+
+a:focus,
+a:link:focus,
+a:visited:focus,
+ta[aria-current=true]:focus {
+    box-shadow: 0 0 0 6px var(--accent), 0 0 0 8px var(--accent);
+    outline: 3px solid transparent;
+    outline-offset: 3px;
+    background-color: var(--accent);
+    text-decoration-color: var(--dark);
+    color: var(--dark);
+    border-radius: .5px;
+}
+
+/*---------- || Blocks ----------*/
+
+.container {
+    padding: 0 1rem;
+    margin: auto;
+    max-width: 1200px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
+}
+
+.col-50 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    box-sizing: border-box;
+}
+
+.col-50 img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.heading {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+
+.heading h1 {
+    font-size: var(--font-size-biggest);
+    margin-bottom: 1rem;
+}
+
+.heading p {
+    font-size: var(--font-size-big);
+}
+
+.lift:hover .lift-text {
+    transform: translateX(48px);
+    transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lift-text {
+    display: flex;
+    transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lift::before {
+    font-family: 'Font Awesome 6 Free';
+    content: '\f061';
+    font-size: var(--font-size-biggest);
+    transform: translateX(-80px);
+    opacity: 0;
+    font-weight: bold;
+    position: absolute;
+    transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lift:hover::before {
+    transform: translateX(0);
+    opacity: 100%;
+}
+
+.lift:hover .lift-unit:nth-child(1) {
+    transform: translateX(5px);
+    transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lift:hover .lift-unit:nth-child(2) {
+    transform: translateX(10px);
+    transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lift:hover .lift-unit:nth-child(3) {
+    transform: translateX(20px);
+    transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lift:hover .lift-unit:nth-child(4) {
+    transform: translateX(40px);
+    transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    color: var(--accent);
+}
+
+.lift-unit {
+    position: relative;
+    display: block;
+    transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* .lift-unit:first-child::before {
+    content: '>';
+    display: none;
+    overflow: hidden;
+    transform: translateX(-100px);
+    transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: 50ms;
+}
+
+.lift:hover .lift-unit:first-child::before {
+    overflow: visible;
+    display: inline-flex;
+    margin-right: 1rem;
+    transform: translateX(0);
+    transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: 50ms;
+} */
+
+/*---------- || Header ----------*/
+
+.rnav {
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rnav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+/*---------- || Misc ----------*/
+
+/* Skip to Main Content */
+
+.skip-main {
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.skip-main:focus {
+    padding: 2rem 0;
+    height: fit-content;
+    width: 100%;
+    overflow: auto;
+}
