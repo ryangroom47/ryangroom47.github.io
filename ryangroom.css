@@ -1,10 +1,12 @@
 :root {
     --accent: #F584B1;
-    --primary-bg: #243929;
+    --primary-bg: #2b2927;
     --secondary-bg: #b19581;
-    --primary-font: #f4f1e1;
+    --primary-font: #a9b691;
     --secondary-font: #efe2c9;
     --dark: #132018;
+    --font-size-h1: 4rem;
+    --font-size-h2: 2rem;
     --font-size-biggest: 4rem;
     --font-size-bigger: 3rem;
     --font-size-big: 1.5rem;
@@ -17,6 +19,7 @@
     --breakpoint-md: 768px;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
+    --image-border-radius: 8px;
 }
 
 /*---------- || Global Elements ----------*/
@@ -29,7 +32,13 @@ body {
 }
 
 h1 {
-    margin: 0;
+    font-size: var(--font-size-biggest);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: .5rem;
 }
 
 a {
@@ -39,7 +48,9 @@ a {
 }
 
 a:hover {
-    text-decoration-color: var(--accent);
+    /* text-decoration-color: var(--accent); */
+    text-decoration: none;
+    cursor: pointer;
 }
 
 a[aria-current=true] {
@@ -49,7 +60,7 @@ a[aria-current=true] {
 a:focus,
 a:link:focus,
 a:visited:focus,
-ta[aria-current=true]:focus {
+a[aria-current=true]:focus {
     box-shadow: 0 0 0 6px var(--accent), 0 0 0 8px var(--accent);
     outline: 3px solid transparent;
     outline-offset: 3px;
@@ -57,6 +68,10 @@ ta[aria-current=true]:focus {
     text-decoration-color: var(--dark);
     color: var(--dark);
     border-radius: .5px;
+}
+
+iframe {
+    border-radius: var(--image-border-radius);
 }
 
 /*---------- || Blocks ----------*/
@@ -73,6 +88,17 @@ ta[aria-current=true]:focus {
     margin: 0 -1rem;
 }
 
+.col-100 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    box-sizing: border-box;
+}
+
 .col-50 {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
@@ -86,7 +112,7 @@ ta[aria-current=true]:focus {
 
 .col-50 img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: var(--image-border-radius);
 }
 
 @media screen and (max-width: 769px) {
@@ -100,11 +126,6 @@ ta[aria-current=true]:focus {
 .heading {
     margin-top: 6rem;
     margin-bottom: 3rem;
-}
-
-.heading h1 {
-    font-size: var(--font-size-biggest);
-    margin-bottom: 1rem;
 }
 
 .heading p {
@@ -185,6 +206,7 @@ ta[aria-current=true]:focus {
         font-weight: bold;
         position: absolute;
         transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+        pointer-events: none;
     }
     
     .lift:hover::before {
@@ -222,6 +244,7 @@ ta[aria-current=true]:focus {
         right: -200px;
         transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
         opacity: 0;
+        pointer-events: none;
     }
     
     .lift:hover .lift-unit:nth-child(4)::after {
